@@ -1,4 +1,4 @@
-package com.belonk.rmq.helloworld;
+package com.belonk.rmq.l01helloworld;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;

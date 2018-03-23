@@ -1,4 +1,4 @@
-package com.belonk.rmq.workqueue;
+package com.belonk.rmq.l02workqueue;
 
 import com.rabbitmq.client.*;
 
@@ -62,7 +62,7 @@ public class Worker {
             }
         };
         // 自动接收消息并处理，接收后，立即将消息标记为删除，如果工作进程挂掉，者其未处理和处理中的消息都将丢失
-//        boolean autoAck = true; // acknowledgment is covered below
+        // boolean autoAck = true; // acknowledgment is covered below
         // 手动接收消息，处理完成后调用channel.basicAck()反馈给RabbitMQ
         boolean autoAck = false;
         channel.basicConsume(NewTask.TASK_QUEUE_NAME, autoAck, consumer);

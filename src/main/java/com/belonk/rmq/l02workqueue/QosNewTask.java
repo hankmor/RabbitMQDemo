@@ -1,4 +1,4 @@
-package com.belonk.rmq.workqueue;
+package com.belonk.rmq.l02workqueue;
 
 import com.rabbitmq.client.*;
 
@@ -14,7 +14,7 @@ import java.util.concurrent.TimeoutException;
  * @version 1.0
  * @since 1.0
  */
-public class DurableNewTask {
+public class QosNewTask {
     //~ Static fields/initializers =====================================================================================
 
     public static final String TASK_QUEUE_NAME = "durable_queue";
@@ -37,12 +37,13 @@ public class DurableNewTask {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("localhost");
         Connection connection = factory.newConnection();
+        // 为了验证结果，1、3消息的执行时间不变，而2、4、5的执行时间都改为1秒（由.的数量决定）
         String[] msgs = new String[]{
-                "First Message.",
-                "Second Message..",
-                "Third Message...",
-                "Fourth Message....",
-                "Fifth Message....."
+                "First Message.", // 1s
+                "Second Message.", // 1s
+                "Third Message...", // 3s
+                "Fourth Message.", // 1s
+                "Fifth Message." // 1s
         };
 
         Channel channel = connection.createChannel();

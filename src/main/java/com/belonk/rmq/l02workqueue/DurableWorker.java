@@ -1,4 +1,4 @@
-package com.belonk.rmq.workqueue;
+package com.belonk.rmq.l02workqueue;
 
 import com.rabbitmq.client.*;
 
