@@ -67,8 +67,10 @@ public class LogReceiverDirect {
         // 创建随机队列
         String queueName = channel.queueDeclare().getQueue();
         // 绑定队列
+        // 队列1
         // System.out.println("routingKey: " + "error");
         // channel.queueBind(queueName, LogSenderDirect.EXCHANGE_NAME, "error");
+        // 队列2
         System.out.println("routingKey: " + "debug");
         channel.queueBind(queueName, LogSenderDirect.EXCHANGE_NAME, "debug");
         System.out.println("routingKey: " + "info");
