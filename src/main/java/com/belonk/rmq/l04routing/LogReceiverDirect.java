@@ -5,10 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.util.Random;
 import java.util.concurrent.TimeoutException;
-
-import static com.belonk.rmq.l04routing.LogSenderDirect.logs;
 
 /**
  * Created by sun on 2018/3/20.
