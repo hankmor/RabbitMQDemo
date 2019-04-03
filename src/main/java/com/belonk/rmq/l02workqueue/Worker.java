@@ -55,7 +55,7 @@ public class Worker {
                     e.printStackTrace();
                 } finally {
                     System.out.println(" [x] Done");
-                    // 处理完成，手动接收消息时，需要在处理成功后进行反馈，保证消息不丢失
+                    // 处理完成，手动接收消息时，需要在处理成功后进行反馈，保证消息不丢失String json = "{\"foo\" : \"value\" }";""
                     // 如果消费者工作进程挂掉，自动分给其他消费者
                     channel.basicAck(envelope.getDeliveryTag(), false);
                 }
